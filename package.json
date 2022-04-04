@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JonathanLima25/lib-node/issues"
   },
-  "homepage": "https://github.com/JonathanLima25/lib-node#readme"
+  "homepage": "https://github.com/JonathanLima25/lib-node#readme",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
 }
