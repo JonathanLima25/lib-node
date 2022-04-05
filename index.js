@@ -12,7 +12,7 @@ function extraLinks(texto) {
         resultados.push({ [temp[1]]: temp[2] })
     }
 
-    return resultados;
+    return resultados.length === 0 ? 'Não há links' : resultados;
 }
 
 function trataErro(erro) {
@@ -23,14 +23,10 @@ async function pegaArquivo(caminhoDoArquivo) {
     const encoding = 'utf-8';
     try {
         const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
-        console.log(extraLinks(texto));
+        return extraLinks(texto);
     } catch(erro) {
         trataErro(erro);
-    } finally {
-        console.log(chalk.yellow('Programa finalizado!!!'))
-    }
+    } 
 }
-
-// pegaArquivo('./arquivos/texto1.md');
 
 module.exports = pegaArquivo;
